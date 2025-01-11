@@ -1,0 +1,26 @@
+name: Update Snippy Formula
+
+on:
+  repository_dispatch:
+    types: [update-formula]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Update Formula
+        run: |
+          sed -i '' "s|url \".*\"|url \"https://github.com/narashin/snippy/releases/download/${{ github.event.client_payload.version }}/snippy-${{ github.event.client_payload.version }}.tar.gz\"|" Formula/snippy.rb
+          sed -i '' "s|sha256 \".*\"|sha256 \"${{ github.event.client_payload.sha256 }}\"|" Formula/snippy.rb
+
+      - name: Commit and Push
+        run: |
+          git config --local user.name "narashin"
+          git config --local user.email "me@nara.dev"
+          git add Formula/snippy.rb
+          git commit -m "Update Snippy to version ${{ github.event.client_payload.version }}"
+          git push
