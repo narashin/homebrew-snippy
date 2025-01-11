@@ -7,7 +7,9 @@ class Snippy < Formula
 
   def install
     bin.install "snippy"
-    chmod "+x", bin/"snippy"
+    libexec.install Dir["_internal"]
+
+    (bin/"snippy").write_env_script libexec/"snippy", PYTHONHOME: libexec
   end
 
   test do
