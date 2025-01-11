@@ -7,6 +7,7 @@ class Snippy < Formula
 
   def install
     bin.install "snippy"
+    chmod "+x", bin/"snippy"
   end
 
   test do
