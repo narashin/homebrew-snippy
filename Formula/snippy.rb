@@ -6,8 +6,7 @@ class Snippy < Formula
   license "MIT"
 
   def install
-    bin.install "snippy"
-    libexec.install Dir["_internal"]
+    libexec.install "snippy", "_internal"
 
     (bin/"snippy").write_env_script libexec/"snippy", PYTHONHOME: libexec
   end
