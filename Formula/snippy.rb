@@ -1,17 +1,18 @@
 class Snippy < Formula
-  include Language::Python::Virtualenv
-  desc "Build Git commit messages your way"
-  url "https://github.com/narashin/homebrew-snippy/releases/download/v2.0.0/snippy-2.0.0.tar.gz"
-  sha256 "SHA256"
+  desc "CLI tool to generate Git commit messages"
+  homepage "https://github.com/narashin/snippy"
+  url "https://github.com/narashin/homebrew-snippy/releases/download/v2.0.3/snippy-2.0.3-py3-none-any.whl"
+  sha256 "your-sha256-here"
   license "MIT"
-  url "https://github.com/narashin/homebrew-snippy/releases/download/v2.0.2/snippy-2.0.2-py3-none-any.whl"
+
   depends_on "python@3.12"
 
   def install
-    virtualenv_install_with_resources
+    system "pip3", "install", "--no-deps", "--upgrade", "--target=#{libexec}", "dist/snippy-#{version}-py3-none-any.whl"
+    bin.install_symlink "#{libexec}/bin/snippy" => "snippy"
   end
 
   test do
-    system bin/"snippy", "--help"
+    system "#{bin}/snippy", "--help"
   end
 end
