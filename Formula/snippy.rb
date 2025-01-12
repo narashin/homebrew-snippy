@@ -8,14 +8,7 @@ class Snippy < Formula
   depends_on "python@3.12"
 
   def install
-    # Copy the wheel file to libexec first
-    whl_file = "#{buildpath}/snippy-#{version}-py3-none-any.whl"
-    cp whl_file, libexec
-
-    # Install the package using pip3
-    system "pip3", "install", "--no-deps", "--upgrade", "--target=#{libexec}", "#{libexec}/snippy-#{version}-py3-none-any.whl"
-    
-    # Create a symlink to the binary
+    system "pip3", "install", "--no-deps", "--upgrade", "--target=#{libexec}", cached_download
     bin.install_symlink "#{libexec}/bin/snippy" => "snippy"
   end
 
