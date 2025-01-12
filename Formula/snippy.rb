@@ -12,7 +12,7 @@ class Snippy < Formula
     mv cached_download, whl_file
 
     system "pip3", "install", "--no-deps", "--upgrade", "--target=#{libexec}", whl_file
-    bin.install_symlink "#{libexec}/bin/snippy" => "snippy"
+    (bin/"snippy").write_env_script "#{libexec}/bin/snippy", PYTHONPATH: libexec
   end
 
   test do
