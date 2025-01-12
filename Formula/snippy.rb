@@ -11,7 +11,7 @@ class Snippy < Formula
     whl_file = "snippy-#{version}-py3-none-any.whl"
     mv cached_download, whl_file
 
-    system "pip3", "install", "--no-deps", "--upgrade", "--target=#{libexec}", whl_file
+    system "pip3", "install", "--upgrade", "--target=#{libexec}", whl_file
     (bin/"snippy").write_env_script "#{libexec}/bin/snippy", PYTHONPATH: libexec
   end
 
