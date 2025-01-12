@@ -1,8 +1,8 @@
 class Snippy < Formula
   desc "CLI tool for Git commit templates with emoji support"
   homepage "https://github.com/narashin/snippy"
-  url "https://github.com/narashin/homebrew-snippy/releases/download/v1.1.6/snippy-v1.1.6.tar.gz"
-  sha256 "8fca8e5a8d66fbc855f4cb6bf374aa7b4c659dc2238b5d1e3dd36771540c9e83"
+  url "https://github.com/narashin/homebrew-snippy/releases/download/v1.1.8/snippy-v1.1.8.tar.gz"
+  sha256 "2c7d188ed17ea821dcf7148fbb98e59f6f8bc85c031a8806e03e8eed85592553"
   license "MIT"
 
   def install
