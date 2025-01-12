@@ -8,7 +8,7 @@ class Snippy < Formula
   depends_on "python@3.12"
 
   def install
-    system "pip3", "install", "--no-deps", "--upgrade", "--target=#{libexec}", "dist/snippy-#{version}-py3-none-any.whl"
+    system "pip3", "install", "--no-deps", "--upgrade", "--target=#{libexec}", "#{buildpath}/snippy-#{version}.whl"
     bin.install_symlink "#{libexec}/bin/snippy" => "snippy"
   end
 
