@@ -1,8 +1,8 @@
 class Snippy < Formula
   desc "CLI tool to generate Git commit messages"
   homepage "https://github.com/narashin/snippy"
-  url "https://github.com/narashin/homebrew-snippy/releases/download/v2.4.1/snippy-v2.4.1.whl"
-  sha256 "ae669cca65d1ff60eaa1cdeffcb43457121dd209033f7893faa3e6b5fbda509d"
+  url "https://github.com/narashin/homebrew-snippy/releases/download/v2.4.2/snippy-v2.4.2.whl"
+  sha256 "45e6d77ebc220855e0ba9502b754c22ea90c38c6894a1166afcd87d11035a702"
   license "MIT"
 
   depends_on "python@3.12"
