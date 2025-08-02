@@ -1,7 +1,7 @@
 class Snippy < Formula
     desc "CLI tool to generate Git commit messages"
     homepage "https://github.com/narashin/snippy"
-    url "https://github.com/narashin/homebrew-snippy/releases/download/v3.3.2/snippy-v3.3.2.whl"
+    url "https://github.com/narashin/homebrew-snippy/releases/download/v3.3.3/snippy-v3.3.3.whl"
     sha256 "d463196982430513d1d2ada7b4f64d10f0de6ae9c696e3ec44082e99d0aa63df"
     license "MIT"
 
