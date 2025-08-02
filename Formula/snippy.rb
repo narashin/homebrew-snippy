@@ -1,9 +1,8 @@
 class Snippy < Formula
     desc "CLI tool to generate Git commit messages"
     homepage "https://github.com/narashin/snippy"
-    url "https://github.com/narashin/homebrew-snippy/releases/download/v3.0.1/sn
-  ippy-v3.0.1.whl"
-    sha256 "fe308aaf2dc7c1b9203a9b2fce4318e674e1ae19c9918f06daa8146d343a0708"
+    url "https://github.com/narashin/homebrew-snippy/releases/download/v3.0.1/snippy-v3.0.1.whl"
+    sha256 "d463196982430513d1d2ada7b4f64d10f0de6ae9c696e3ec44082e99d0aa63df"
     license "MIT"
 
     depends_on "python@3.12"
@@ -18,8 +17,7 @@ class Snippy < Formula
       (bin/"snippy").write <<~EOS
         #!/bin/bash
         export PYTHONPATH="#{libexec}:$PYTHONPATH"
-        exec "#{Formula["python@3.12"].opt_bin}/python3" "#{libexec}/bin/snippy"
-   "$@"
+        exec "#{Formula["python@3.12"].opt_bin}/python3" "#{libexec}/bin/snippy" "$@"
       EOS
 
       chmod 0755, bin/"snippy"
